@@ -29,17 +29,25 @@ for filename in "${!models[@]}"; do
     || echo -e "  ${CROSS} ${RED}Failed to download ${filename}.${RESET}"
 done
 
-echo -e "\n${GREEN}${BOLD}✅ Models installed successfully!${RESET}"
+echo -e "\n${GREEN}${BOLD}✅ Models installed successfully!${RESET}\n"
 
-echo -e "\n${CYAN}${BOLD}Next steps:${RESET}"
+echo -e "${CYAN}${BOLD}Next steps:${RESET}\n"
 
 echo -e "${YELLOW}1.${RESET} Create a virtual environment:"
-echo -e "   ${BOLD}python -m venv .venv${RESET}"
+echo -e "   ${BOLD}python -m venv .venv${RESET}\n"
 
 echo -e "${YELLOW}2.${RESET} Activate it:"
 echo -e "   ${BOLD}# On Linux/Mac:${RESET}    . .venv/bin/activate"
-echo -e "   ${BOLD}# On Windows:${RESET}      . .venv/Scripts/activate"
+echo -e "   ${BOLD}# On Windows:${RESET}      . .venv/Scripts/activate\n"
 
 echo -e "${YELLOW}3.${RESET} Install dependencies:"
-echo -e "   ${BOLD}python -m pip install -r requirements.txt${RESET}"
+echo -e "   ${BOLD}python -m pip install -r requirements.txt${RESET}\n"
 
+echo -e "${YELLOW}4.${RESET} Apply database migrations:"
+echo -e "   ${BOLD}python manage.py migrate${RESET}\n"
+
+echo -e "${YELLOW}5.${RESET} (Optional) Create a Django superuser for admin access:"
+echo -e "   ${BOLD}python manage.py createsuperuser${RESET}\n"
+
+echo -e "${YELLOW}6.${RESET} Run the development server:"
+echo -e "   ${BOLD}python manage.py runserver${RESET}\n"
