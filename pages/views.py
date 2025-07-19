@@ -1,9 +1,17 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView
+from django.views.generic import DetailView, TemplateView
+
+from nails.models import Nail
 
 
 class HomePageView(TemplateView):
     template_name = "home.html"
+
+
+class ResultsDetailView(DetailView):
+    model = Nail
+    context_object_name = "nail"
+    template_name = "result.html"
 
 
 class QuestionsFormView(LoginRequiredMixin, TemplateView):

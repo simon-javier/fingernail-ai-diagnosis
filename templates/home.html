@@ -5,8 +5,18 @@
 {% block content %}
 {% if user.is_authenticated %}
 <p>Hi {{ user.username }}! You are {{ user.age }} years old.</p>
-<div>
-    <a href="/questions-form" class="btn btn-primary">Upload Image</a>
+<div id="main-container">
+    <form action="/upload/" class="flex gap-4 flex-col items-center" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <input type="file"
+            class="file:mr-4 file:rounded-full file:border-0 file:bg-neutral-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-neutral-700 hover:file:bg-neutral-100 dark:file:bg-neutral-600 dark:file:text-neutral-100 dark:hover:file:bg-neutral-500"
+            name="nail_image" id="nail_image" accept="image/*" required>
+        <button
+            class="block text-black bg-neutral-200/90 rounded-2xl text-center px-3 py-2 text-base font-medium hover:bg-neutral-300"
+            type="submit">Upload</button>
+    </form>
+
+    <div id="upload-result"></div>
 </div>
 {% else %}
 <p>You are not logged in</p>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock title %}
+
+{% block content %}
+<div class="result-entry">
+  <img src="{{ nail.nail_image.url }}" alt="">
+  <h1 class="text-3xl font-bold">Nail Classification: {{ nail.nail_classification }}</h1>
+  <h2 class="text-2xl italic">Confidence Level: {{ nail.confidence_level }}</h1>
+    <p>Possible Systemic diseases</p>
+    <ul>
+      <li>Sakit sa bato</li>
+      <li>Sakit sa puso</li>
+      <li>Sakit sa atay</li>
+    </ul>
+</div>
+{% endblock content %}
