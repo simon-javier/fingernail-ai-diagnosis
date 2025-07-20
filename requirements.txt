@@ -5,3 +5,5 @@ django-crispy-forms==2.4
 django-types==0.21.0
 sqlparse==0.5.3
 types-psycopg2==2.9.21.20250516
+torch
+torchvision
